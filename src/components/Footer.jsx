@@ -11,12 +11,12 @@ const Footer = () => {
   
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <Laptop className="w-8 h-8" />
-              <span className="text-2xl font-bold gradient-text">ProjectHub</span>
+              
+              <img src="/assets/logo.png" className='h-8 w-8' alt="logo" />
+              <span className="text-2xl font-bold gradient-text">Bubble.IO</span>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Explore my web projects, case studies, and portfolio. 
-              Discover how I build modern web applications using React, Tailwind, and Node.js.
+               A simple and interactive web application to install, uninstall, and manage apps seamlessly.
             </p>
             <div className="flex space-x-4">
               <Link to="#" className="text-white hover:text-secondary transition"><Twitter /></Link>
@@ -31,9 +31,9 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-secondary mb-4 gradient-text">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-white hover:text-secondary transition">Home</Link></li>
-              <li><Link to="/projects" className="text-white hover:text-secondary transition">Projects</Link></li>
-              <li><Link to="/about" className="text-white hover:text-secondary transition">About Me</Link></li>
-              <li><Link to="/skills" className="text-white hover:text-secondary transition">Skills</Link></li>
+              <li><Link to="/apps" className="text-white hover:text-secondary transition">Apps</Link></li>
+              <li><Link to="/about" className="text-white hover:text-secondary transition">About </Link></li>
+              <li><Link to="/installation" className="text-white hover:text-secondary transition">Installed</Link></li>
               <li><Link to="/contact" className="text-white hover:text-secondary transition">Contact</Link></li>
             </ul>
           </div>

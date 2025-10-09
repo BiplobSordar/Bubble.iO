@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -16,17 +17,20 @@ const Banner = () => {
             At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. Our goal is to turn your ideas into digital experiences that truly make an impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
+            <Link to={'https://www.apple.com/app-store/'}>
 
-            <button className="flex items-center gap-2 px-6 py-3 border border-gray-300 bg-[rgba(0,0,0,0.0001)] text-[#001931] font-semibold rounded-md hover:bg-gray-100 transition">
-              <img src="/assets/app-store.png" alt="logo" className='h-5 w-5' />
-              <span>App Store</span>
-            </button>
+              <button className="flex items-center gap-2 px-6 py-3 border border-gray-300 bg-[rgba(0,0,0,0.0001)] text-[#001931] font-semibold  cursor-pointer    rounded-md hover:bg-white transition">
+                <img src="/assets/app-store.png" alt="logo" className='h-5 w-5' />
+                <span>App Store</span>
+              </button>
+            </Link>
 
-
-            <button className="flex items-center gap-2 px-6 py-3 border border-gray-300 bg-[rgba(0,0,0,0.0001)] text-[#001931] font-semibold rounded-md hover:bg-gray-100 transition">
-              <img src="/assets/playstore.png" alt="Logo" className='h-5 w-5' />
-              <span>Google Play</span>
-            </button>
+            <Link to={'https://play.google.com/'}>
+              <button className="flex items-center gap-2 px-6 py-3 border border-gray-300 bg-[rgba(0,0,0,0.0001)] over:bg-[#f5f5f5f] text-[#001931]   cursor-pointer      font-semibold rounded-md hover:bg-white transition">
+                <img src="/assets/playstore.png" alt="Logo" className='h-5 w-5' />
+                <span>Google Play</span>
+              </button>
+            </Link>
           </div>
 
         </div>

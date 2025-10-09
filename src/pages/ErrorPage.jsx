@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ErrorPage = () => {
+const ErrorPage = ({message=''}) => {
   const navigate = useNavigate();
 
   return (
@@ -14,7 +14,7 @@ const ErrorPage = () => {
       />
 
       <h1 className="text-[43px] md:text-5xl font-bold text-[#001931] mb-4">
-        Oops! Something went wrong
+        Oops! Something went wrong .{message}
       </h1>
 
       <p className="text-[#627382]text-lg md:text-xl mb-8 max-w-xl">

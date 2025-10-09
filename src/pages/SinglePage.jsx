@@ -4,29 +4,51 @@ import { trendingApps } from "../data/app_data";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import Loader from "../components/Loader";
 import { Building2, Download } from "lucide-react";
+import ErrorPage from "./ErrorPage";
+import { useData } from "../Context/DataContext";
+import { toast } from "react-toastify";
+import RandomAppsSection from "../components/RandomAppSection";
 
 const SingleAppPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [app, setApp] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false)
 
+  const { data, setItem, getItem, deleteItem, clearAll } = useData()
   useEffect(() => {
     const fetchApp = async () => {
-      setLoading(true);
-      await new Promise((r) => setTimeout(r, 1000));
-      const found = trendingApps.find((a) => a.id === parseInt(id));
-      setApp(found);
-      setLoading(false);
+
+      try {
+        setLoading(true);
+        await new Promise((r) => setTimeout(r, 1000))
+
+        const found = trendingApps.find((a) => a.id === parseInt(id))
+        
+        if (!found) throw new Error("App Not Found")
+
+        setApp(found);
+
+      } catch (error) {
+
+        setError(true)
+      } finally {
+
+        setLoading(false);
+      }
+
     };
     fetchApp();
   }, [id]);
 
   if (loading) return <Loader />;
+  
+  if (error) return <ErrorPage message="Connot Find The App" />
 
 
 
-  const ratingData = app.ratings.map((r) => ({ name: r.name, count: r.count }));
+  const ratingData = app?.ratings?.map((r) => ({ name: r.name, count: r.count }));
 
   const formatNumber = (num) => {
     if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + "M";
@@ -37,11 +59,11 @@ const SingleAppPage = () => {
   return (
     <section className="py-16 px-4 md:px-8 max-w-[1400px] mx-auto space-y-16">
 
-     
+
 
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-      
-      
+
+
         <div className="flex-shrink-0 w-full sm:w-80">
           <img
             src={app.image}
@@ -50,11 +72,11 @@ const SingleAppPage = () => {
           />
         </div>
 
-        
-        
+
+
         <div className="flex-1 flex flex-col justify-center text-[#001931]">
-         
-         
+
+
           <div className="pb-6 mb-6 border-b border-gray-300 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[40px] font-extrabold mb-3">{app.title}</h1>
             <p className="flex justify-center lg:justify-start items-center gap-3 text-lg sm:text-xl md:text-2xl lg:text-[32px] text-[#627382]">
@@ -88,27 +110,28 @@ const SingleAppPage = () => {
               <span className="text-sm sm:text-base md:text-[24px] text-[#627382]">Reviews</span>
             </div>
 
-            <div className="flex flex-col items-center justify-center w-[120px] sm:w-[140px] md:w-[150px]">
-
-              <span className="text-[36px] sm:text-[38px] md:text-[40px] leading-none">📦</span>
-              <span className="text-2xl sm:text-3xl md:text-[32px] font-bold mt-1">{app.size}</span>
-              <span className="text-sm sm:text-base md:text-[24px] text-[#627382]">MB</span>
-            </div>
+            
           </div>
 
 
 
           <div className="flex justify-center lg:justify-start mt-8">
 
-            <button className="gradient-bg text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl text-lg sm:text-xl md:text-2xl lg:text-[32px] font-semibold transition-transform duration-200 hover:scale-105">
-              Install App
+            <button disabled={getItem(id)} onClick={()=>{
+              console.log('i am clicked')
+              setItem(app?.id,app)
+              toast.success('Installed Successfully.')
+
+
+            }} className="gradient-bg text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl text-lg sm:text-xl md:text-2xl lg:text-[32px] font-semibold transition-transform duration-200 hover:scale-105">
+              {getItem(id) ? "Installed" : `Install Now (${app.size}MB)`}
             </button>
           </div>
         </div>
       </div>
 
-   
-   
+
+
       <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md">
 
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[32px] font-bold text-[#001931] mb-6">
@@ -139,11 +162,12 @@ const SingleAppPage = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[32px] font-bold text-[#001931] mb-4">
           About this App
         </h2>
-        
+
         <p className="text-[#627382] leading-relaxed text-sm sm:text-base md:text-lg lg:text-[22px]">
           {app.description}
         </p>
       </div>
+      <RandomAppsSection/>
     </section>
   );
 };

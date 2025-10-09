@@ -16,7 +16,7 @@ const AboutPage = () => {
 
         <div className="flex justify-center">
           <img
-            src="/assets/about-image.png"
+            src="/assets/google1.jpg"
             alt="About"
             className="rounded-lg shadow-lg w-full max-w-md"
           />

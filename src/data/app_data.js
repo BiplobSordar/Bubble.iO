@@ -64,7 +64,7 @@ export const trendingApps = [
     ratingAvg: 4.7,
     downloads: 6000000000,
     ratings: [
-      { name: "1 star", count: 250000 },
+      { name: "1 star", count: 25000000 },
       { name: "2 star", count: 400000 },
       { name: "3 star", count: 900000 },
       { name: "4 star", count: 3500000 },
@@ -82,7 +82,7 @@ export const trendingApps = [
     ratingAvg: 4.7,
     downloads: 2000000000,
     ratings: [
-      { name: "1 star", count: 200000 },
+      { name: "1 star", count: 20000000 },
       { name: "2 star", count: 350000 },
       { name: "3 star", count: 700000 },
       { name: "4 star", count: 3000000 },

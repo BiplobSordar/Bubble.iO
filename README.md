@@ -1,195 +1,84 @@
-# 🦸‍♂️ Assignment 008 — Hero IO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble.io — App Management Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-### 📅 Deadline For 60 marks: 09 October , 2025 (11:59 pm ⏱️)
+  <div class="max-w-5xl mx-auto p-8">
 
-### 📅 Deadline For 50 marks : 10 October , 2025 (11:59 pm⏱️)
+   
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-[#632EE3] mb-2">Bubble.io</h1>
+      <p class="text-lg text-gray-600">
+        A simple and interactive web application to install, uninstall, and manage apps seamlessly.
+      </p>
+    </header>
 
-### 📅 Deadline For 30 marks: Any time after 10 October , 2025.
+   
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-[#001931] mb-4"> Features</h2>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li> <strong>Install / Uninstall Apps</strong> — Add or remove apps easily with one click.</li>
+        <li> <strong>Installed Apps List</strong> — View all your installed apps instantly.</li>
+        <li> <strong>LocalStorage Persistence</strong> — Your installed apps are saved locally.</li>
+        <li> <strong>Context API Integration</strong> — Manage global state efficiently across components.</li>
+        <li> <strong>Real-Time Rendering</strong> — Components auto-update with <code>useEffect()</code>.</li>
+        <li> <strong>Toast Notifications</strong> — Smooth user feedback for every action.</li>
+        <li> <strong>Recharts Integration</strong> — Display app data visually with charts.</li>
+      </ul>
+    </section>
 
----
-## Private Repo-Link : please create your own public repository for this assignment.
----
+    <!-- Technologies Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-[#001931] mb-4">🛠️ Technologies Used</h2>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li> <strong>React</strong> — Frontend framework</li>
+        <li> <strong>React Router DOM</strong> — For seamless navigation</li>
+        <li> <strong>Tailwind CSS</strong> — Fast and responsive UI styling</li>
+        <li> <strong>React Toastify</strong> — Beautiful toast notifications</li>
+        <li> <strong>Recharts</strong> — Interactive data visualization</li>
+        <li> <strong>Lucide React</strong> — Modern and minimal icon library</li>
+        <li> <strong>React Context API + useEffect</strong> — Efficient state and lifecycle management</li>
+      </ul>
+    </section>
 
-# 🐣 Basic Requirements
+    <!-- Installation Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-[#001931] mb-4"> Installation</h2>
+      <pre class="bg-gray-100 p-4 rounded text-gray-800 overflow-x-auto">
+<code># Clone the repository
+git clone https://github.com/yourusername/bubble-io.git
 
-- Make the Application Responsive for All the Devices
-- Do minimum 5 commits to your github Repository
-- Give a meaning full name to your application
-- Make Sure on Production Application is error Free
-- Add a Readme.md with App Name , Description & Technologies
+# Go inside the folder
+cd bubble-io
 
----
+# Install dependencies
+npm install
 
-# 🔧 Main Requirements
+# Start the development server
+npm run dev
+</code>
+      </pre>
+    </section>
 
-## 1. 🧱 Layout & Data Design
+    <!-- Live Demo Section -->
+    <section class="mb-12 text-center">
+      <h2 class="text-2xl font-semibold text-[#001931] mb-4">🌐 Live Demo</h2>
+      <a href="#" class="text-white bg-[#632EE3] px-6 py-3 rounded-md hover:bg-[#4a22b8] transition">
+        Visit Bubble.io App
+      </a>
+    </section>
 
-#### Header
+    <!-- License Section -->
+    <section class="text-center text-gray-600">
+      <p>📜 <strong>License:</strong> MIT License</p>
+    </section>
 
-- The header must include:
-  - A logo.on clicking it user will be navigated to home page.
-  - A navigation bar with links [ `home` , `apps` , `installation` ] and active route indication.
-  - A `Contribution` button as Figma linking to the your GitHub profile.
+  </div>
 
-#### Footer
-
-- Design a custom footer using your own creativity and style.
-
-#### Data
-
-- Create an JSON Array of minimum 12-20 objects for app data using the following structure:
-  ```js
-  {
-    image: string;
-    title: string;
-    companyName: string;
-    id: number;
-    description: string;
-    size: number;
-    reviews: number;
-    ratingAvg: number;
-    downloads: number;
-    ratings: [
-      { name: "1 star"; count: number },
-      { name: "2 star"; count: number },
-      { name: "3 star"; count: number },
-      { name: "4 star"; count: number },
-      { name: "5 star"; count: number }
-    ];
-  }
-  ```
-
----
-
-## 2. 🏠 Home Page
-
-#### Banner
-
-- Must contain a center-aligned heading, text, and two buttons.
-- “App Store” button will redirect to the App Store.
-- “Play Store” button will redirect to the Play Store.
-
-#### States Section
-
-- Must contain three state cards as shown in Figma.
-- Each state should have a title and a unique background color or style.
-
-#### Top Apps Section
-
-- Display eight apps in a four-column layout.
-- Each app card should display:
-  - App title
-  - Image
-  - Download count
-  - Average rating
-- Clicking on a card should navigate the user to the App Details page.
-- Include a “Show All” button that navigates to the All Apps page.
-
----
-
-## 3.📱 All Apps Page
-
-#### Title Section
-
-- Include a title and subtitle following the Figma design.
-
-#### Search and States
-
-- Display the total number of apps on the left and a search bar on the right.
-- `Implement live search functionality`
-  - filters apps by title as the user types.
-  - Search will be case-insensitive
-  - If no app matches, display a “No App Found” message.
-
-#### App Section
-
-- Display all apps from the JSON data.
-- Each app card should include:
-  - App title
-  - Image
-  - Download count
-  - Average rating
-- Clicking on an app card should navigate to the App Details page.
-
----
-
-## 4.📊 App Details Page
-
-#### App Information
-
-- Show app image on the left.
-- Display app details such as title, rating, downloads, reviews.
-- Include an `Install button`:
-  - When clicked, it becomes disabled and the text changes to `Installed`.
-  - Show a Success Toast after App installed
-
-#### App Review Chart
-
-- Implement a responsive chart using the **Recharts** library.
-- Visualize the app’s review data as shown in the Figma design.
-
-#### App Description
-
-- Show the app details in description section as per Figma layout.
-
----
-
-## 5. Error Page & Others
-
-- Create a custom error page for invalid routes.
-
-- Show a loading animation during: `Challenge Part`  
-
-  - Page navigation. 
-  - Search operation.
-
-- Show a Relevant Not Found message app not found in app details section.
-
-- Ensure that reloading any route after deployment does not cause an error.
-
----
-
-# Challenge Requirement
-
-### LocalStorage Features
-
-#### App Installation
-
-- When the “Install” button is clicked:
-  - Save the app to localStorage.
-  - If the app is already installed, show a disabled button with the text `Installed`.
-
-#### My Installation Page
-
-- Create a page named “My Installation” following the Figma design.
-- Display all installed apps as cards.
-- Include an Uninstall button:
-  - Clicking it
-    - removes the app from both the UI and localStorage.
-    - Show an Toast with some relevant message
-
----
-
-### Sort by Downloads
-
-- Implement a dropdown for sorting apps by download count.
-- The dropdown must include:
-  - **High-Low:** Sort apps in ascending order by downloads.
-  - **Low-High:** Sort apps in descending order by downloads.
-
----
-
-### Loading Animation
-
-- Show a loading animation during: 
-  - Page navigation. 
-  - Search operation
-
----
-
-## 🚀 Deployment
-
-- Deploy the project to Cloudflare / Netlify / Vercel.
-- Reloading from any route must work correctly without showing a 404 error.
-
----
+</body>
+</html>

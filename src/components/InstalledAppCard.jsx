@@ -1,6 +1,7 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const InstalledAppCard = ({ app }) => {
+const InstalledAppCard = ({ deleteItem, app }) => {
   const formatNumber = (num) => {
     if (num >= 1_000_000) return Math.round(num / 1_000_000) + "M";
     if (num >= 1_000) return Math.round(num / 1_000) + "K";
@@ -57,11 +58,17 @@ const InstalledAppCard = ({ app }) => {
 
         <button
           className="px-4 py-2 bg-[#00D390] hover:bg-red-600 text-white font-semibold rounded-md transition"
-          onClick={() => alert(`Uninstalled ${app.title}`)}
+          onClick={(e) => {
+            e.stopPropagation()
+            e.preventDefault();
+
+            deleteItem(app?.id)
+            toast.success('App Uninstalled Successfully')
+          }}
         >
           Uninstall
         </button>
-        
+
       </div>
     </div>
   );

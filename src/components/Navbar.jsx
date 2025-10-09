@@ -20,9 +20,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-full px-4">
 
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center cursor-pointer space-x-2">
               <img src="/assets/logo.png" className="h-[40px] w-[40px]" alt="Main Logo" />
-              <h1 className="text-[16px] font-bold gradient-text">HERO.IO</h1>
+              <h1 className="text-[16px] font-bold gradient-text">Bubble.IO</h1>
             </Link>
           </div>
 
@@ -33,10 +33,9 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) =>
-                    `block text-[16px] transition-all duration-300 font-medium ${
-                      isActive
-                        ? "bg-[linear-gradient(to_right,#632EE3,#9F62F2)] bg-clip-text text-transparent font-semibold border-b-2 border-[#632EE3]"
-                        : "text-black hover:font-semibold hover:bg-[linear-gradient(to_right,#632EE3,#9F62F2)] hover:bg-clip-text hover:text-transparent"
+                    `block text-[16px] transition-all duration-300 font-medium ${isActive
+                      ? "bg-[linear-gradient(to_right,#632EE3,#9F62F2)] bg-clip-text text-transparent font-semibold border-b-2 border-[#632EE3]"
+                      : "text-black hover:font-semibold hover:bg-[linear-gradient(to_right,#632EE3,#9F62F2)] hover:bg-clip-text hover:text-transparent"
                     }`
                   }
                 >
@@ -47,10 +46,12 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className="w-[145px] h-[43px] gradient-bg flex justify-center items-center gap-2 rounded-md">
-              <Github />
-              <span className="font-semibold text-[16px]">Contribute</span>
-            </button>
+            <Link to={'https://github.com/BiplobSordar'}>
+              <button className="w-[145px] h-[43px] cursor-pointer gradient-bg flex justify-center items-center gap-2 rounded-md">
+                <Github />
+                <span className="font-semibold text-[16px]">Contribute</span>
+              </button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -88,10 +89,9 @@ const Navbar = () => {
               to={link.to}
               end={link.to === "/"}
               className={({ isActive }) =>
-                `block text-[16px] py-3 transition-all duration-300 font-medium ${
-                  isActive
-                    ? "bg-[linear-gradient(to_right,#632EE3,#9F62F2)] bg-clip-text text-transparent font-semibold border-b-2 border-[#632EE3]"
-                    : "text-black hover:font-semibold hover:bg-[linear-gradient(to_right,#632EE3,#9F62F2)] hover:bg-clip-text hover:text-transparent"
+                `block text-[16px] py-3 transition-all duration-300 font-medium ${isActive
+                  ? "bg-[linear-gradient(to_right,#632EE3,#9F62F2)] bg-clip-text text-transparent font-semibold border-b-2 border-[#632EE3]"
+                  : "text-black hover:font-semibold hover:bg-[linear-gradient(to_right,#632EE3,#9F62F2)] hover:bg-clip-text hover:text-transparent"
                 }`
               }
               onClick={() => setIsMenuOpen(false)}
@@ -99,10 +99,12 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-           <button className="w-[145px] h-[43px] gradient-bg flex justify-center items-center gap-2 rounded-md">
+          <Link to={'https://github.com/BiplobSordar'}>
+            <button className="w-[145px] h-[43px] gradient-bg flex justify-center items-center gap-2 rounded-md">
               <Github />
               <span className="font-semibold text-[16px]">Contribute</span>
             </button>
+          </Link>
         </div>
       </div>
 
