@@ -2,6 +2,7 @@
 import Banner from '../components/Banner';
 import AppCard from '../components/AppCard';
 import { trendingApps } from '../data/app_data';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -25,11 +26,13 @@ const Home = () => {
 
         <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center my-5 max-w-[1400px] ">
           {trendingApps.map((project) => (
-
+           <Link to={`/apps/${project.id}`}>
+           
             <AppCard
               product={project}
               key={project.id}
             />
+            </Link>
           ))}
         </div>
         <div className="flex justify-center mt-8">
