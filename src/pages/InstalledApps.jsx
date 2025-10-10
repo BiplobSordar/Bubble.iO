@@ -3,9 +3,12 @@ import React, { useState, useEffect } from "react"
 import InstalledAppCard from "../components/InstalledAppCard"
 import { useData } from "../Context/DataContext";
 import { Link } from "react-router-dom";
+import LogoLoader from "../components/LogoLoader"
+
 
 const InstalledAppsPage = () => {
   const { data, setItem, getItem, deleteItem, clearAll } = useData()
+  const [loading, setLoading] = useState(false)
 
   const appsArray = Object.values(data);
 
@@ -15,13 +18,18 @@ const InstalledAppsPage = () => {
 
 
 
-  
+
 
   useEffect(() => {
-    const appsArray = Object.values(data);
+
+    const appsArray = Object.values(data)
+
     if (sortOption === 'High') {
+
       const highToLow = [...appsArray].sort((a, b) => b.downloads - a.downloads)
+
       setApps(highToLow)
+
       return
     }
 
@@ -30,10 +38,24 @@ const InstalledAppsPage = () => {
       setApps(lowToHigh)
       return
     }
-  }, [sortOption,data])
+  }, [sortOption, data])
 
 
 
+  useEffect(() => {
+    setLoading(true)
+    const timer = setTimeout(() => {
+
+      setLoading(false);
+      
+    }, 1000);
+
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  if (loading) return <LogoLoader transparent={true} />
 
   return (
 
@@ -77,14 +99,30 @@ const InstalledAppsPage = () => {
 
         <div className="flex flex-col divide-y divide-gray-200">
 
-          {apps.map((app) => (
+
+          {apps?.length > 0 ? apps.map((app) => (
             <Link to={`/apps/${app.id}`} key={app.id}>
 
 
               <InstalledAppCard app={app} deleteItem={deleteItem} />
             </Link>
 
-          ))}
+          )) : <div className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 gap-6 rounded-2xl bg-white shadow-md">
+            
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001931] text-center">
+              No Installed Apps Yet
+            </h2>
+            <p className="text-lg md:text-xl text-[#627382] text-center max-w-md">
+              You haven’t installed any apps yet. Browse the store and start exploring!
+            </p>
+            <a
+              href="/apps"
+              className="px-6 py-3 mt-2 bg-[#632EE3] text-white font-semibold rounded-md hover:bg-[#4a22b8] transition"
+            >
+              Explore Apps
+            </a>
+          </div>}
+
         </div>
       </div>
     </section>

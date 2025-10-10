@@ -39,7 +39,8 @@ const Home = () => {
 
 
 
-  if (loading) return <LogoLoader />
+  if (loading) return <LogoLoader transparent={true}/>
+  
   if (error) return <ErrorPage />
 
 

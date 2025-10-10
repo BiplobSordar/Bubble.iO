@@ -9,24 +9,33 @@ export const DataProvider = ({ children }) => {
 
 
     const [data, setData] = useState(() => {
+
     const storedData = localStorage.getItem("appData");
+
     return storedData ? JSON.parse(storedData) : {};
   });
 
     useEffect(() => {
+
         const storedData = localStorage.getItem("appData")
 
         if (storedData) setData(JSON.parse(storedData))
 
+
     }, []);
 
     useEffect(() => {
+
         localStorage.setItem("appData", JSON.stringify(data))
+
     }, [data]);
 
 
     const setItem = (id, obj) => {
-        setData((prev) => ({ ...prev, [id]: obj }))
+
+        setData((prev) => (
+            { ...prev, [id]: obj }
+        ))
     };
 
 
@@ -37,8 +46,11 @@ export const DataProvider = ({ children }) => {
 
     const deleteItem = (id) => {
         setData((prev) => {
+
             const newData = { ...prev }
+
             delete newData[id]
+
             return newData
         });
     };

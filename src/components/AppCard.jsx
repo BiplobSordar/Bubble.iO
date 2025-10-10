@@ -1,18 +1,56 @@
 import React from 'react';
 
 
-const AppCard= ({app}) => {
+const AppCard = ({ app }) => {
+
   function formatNumber(num) {
+
     if (num >= 1_000_000) return Math.round(num / 1_000_000) + 'M';
+
     if (num >= 1_000) return Math.round(num / 1_000) + 'K';
+
     return num.toString();
+
   }
 
-  const { image, title, rating, downloads } = app;
+  function calculateAverageRating(ratings) {
+
+    if (!ratings || ratings.length === 0) return 0
+
+    let totalRating = 0
+
+    let totalCount = 0
+
+    for (let i = 0; i < ratings.length; i++) {
+
+      const star = i + 1
+
+      const count = ratings[i].count
+
+
+      totalRating += star * count
+
+      totalCount += count
+
+    }
+
+    const average = totalRating / totalCount
+
+
+
+    return Math.round(average * 2) / 2
+
+  }
+
+
+
+
+
+  const { image, title, ratings, downloads } = app;
 
   return (
     <div className="max-w-[348px] w-full max-h-[435px]   bg-white rounded-xl overflow-hidden shadow-md flex flex-col transition-transform duration-300 hover:scale-105">
-      
+
       <div className="h-[70%] w-full p-4">
         <img
           src={image}
@@ -38,7 +76,7 @@ const AppCard= ({app}) => {
 
             <img src="/assets/icon-ratings.png" className="h-[16px] w-[16px]" alt="rating icon" />
 
-            <span className="text-[16px] font-medium text-[#FF8811]">{rating}</span>
+            <span className="text-[16px] font-medium text-[#FF8811]">{calculateAverageRating(ratings)}</span>
 
           </div>
         </div>

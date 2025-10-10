@@ -13,7 +13,7 @@ const AllAppsPage = () => {
   const [apps, setApps] = useState([])
 
   const [filtredApps, setFiltredApps] = useState([])
-  
+
   const [loading, setLoading] = useState(false)
 
   const [searchLoading, setSearchLoading] = useState(false)
@@ -85,12 +85,21 @@ const AllAppsPage = () => {
 
 
 
-  if (loading) return <Loader />
-  
+  if (loading) return <LogoLoader transparent={true}/>
+
   if (error) return <ErrorPage />
 
   return (
-    <section className="py-16 px-4 md:px-8">
+    <section className="py-16 px-4 md:px-8 flex justify-center items-center flex-col">
+      <div className="w-full ">
+
+        
+        <h1 className="text-black font-semibold text-[48px] my-4 text-center">Our All Applications</h1>
+
+
+        
+        <p className="text-gray-400  text-[18px] my-4 text-center" >Explore All Apps on the Market developed by us. We code for Millions</p>
+      </div>
 
       <div className="flex flex-col sm:flex-row justify-between items-center w-full max-w-7xl mx-auto mb-8 gap-4">
 
@@ -125,7 +134,7 @@ const AllAppsPage = () => {
 
       <div className="w-full relative mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center max-w-[1400px]">
         {
-          searchLoading ? <LogoLoader transparent={true}/> :
+          searchLoading ? <LogoLoader transparent={true} /> :
             filtredApps.length > 0 ? filtredApps.map((app) => (
 
               <Link to={`/apps/${app.id}`}>
