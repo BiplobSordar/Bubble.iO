@@ -55,10 +55,10 @@ npm run dev
 
 <hr/>
 
-<h2 style="color:#001931;" align="center">Live Demo: <a>bubble-i-o.vercel.app</a></h2>
+<h2 style="color:#001931;" align="center">Live Demo: <a>Bubble.iO</a></h2>
 
 <p align="center">
-  <a href="#" style="background:#632EE3; color:white; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block;">
+  <a href="/bubble-i-o.vercel.app" style="background:#632EE3; color:white; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block;">
     Visit Bubble.io App
   </a>
 </p>
@@ -71,4 +71,4 @@ npm run dev
 
 ---
 
-<h4 align="center" style="color:#632EE3;">Made with ❤️ using React + Tailwind CSS</h4>
+<h4 align="center" style="color:#632EE3;">Made with  using React + Tailwind CSS</h4>
