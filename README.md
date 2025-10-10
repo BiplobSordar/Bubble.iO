@@ -58,7 +58,7 @@ npm run dev
 <h2 style="color:#001931;" align="center">Live Demo: <a>Bubble.iO</a></h2>
 
 <p align="center">
-  <a href="/bubble-i-o.vercel.app" style="background:#632EE3; color:white; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block;">
+  <a href="https://bubble-i-o.vercel.app/" style="background:#632EE3; color:white; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block;">
     Visit Bubble.io App
   </a>
 </p>
