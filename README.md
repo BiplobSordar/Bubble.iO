@@ -1,60 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bubble.io — App Management Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<h1 align="center" style="color:#632EE3; font-size:2.5rem; font-weight:800;">
+   Bubble.io — App Management Dashboard
+</h1>
 
-  <div class="max-w-5xl mx-auto p-8">
+<p align="center" style="font-size:1.1rem; color:#555;">
+  A simple and interactive web application to install, uninstall, and manage apps seamlessly.
+</p>
 
-   
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-[#632EE3] mb-2">Bubble.io</h1>
-      <p class="text-lg text-gray-600">
-        A simple and interactive web application to install, uninstall, and manage apps seamlessly.
-      </p>
-    </header>
+<hr/>
 
-   
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-[#001931] mb-4"> Features</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-700">
-        <li> <strong>Install / Uninstall Apps</strong> — Add or remove apps easily with one click.</li>
-        <li> <strong>Installed Apps List</strong> — View all your installed apps instantly.</li>
-        <li> <strong>LocalStorage Persistence</strong> — Your installed apps are saved locally.</li>
-        <li> <strong>Context API Integration</strong> — Manage global state efficiently across components.</li>
-        <li> <strong>Real-Time Rendering</strong> — Components auto-update with <code>useEffect()</code>.</li>
-        <li> <strong>Toast Notifications</strong> — Smooth user feedback for every action.</li>
-        <li> <strong>Recharts Integration</strong> — Display app data visually with charts.</li>
-      </ul>
-    </section>
+<h2 style="color:#001931;">Features</h2>
 
-    <!-- Technologies Section -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-[#001931] mb-4">🛠️ Technologies Used</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-700">
-        <li> <strong>React</strong> — Frontend framework</li>
-        <li> <strong>React Router DOM</strong> — For seamless navigation</li>
-        <li> <strong>Tailwind CSS</strong> — Fast and responsive UI styling</li>
-        <li> <strong>React Toastify</strong> — Beautiful toast notifications</li>
-        <li> <strong>Recharts</strong> — Interactive data visualization</li>
-        <li> <strong>Lucide React</strong> — Modern and minimal icon library</li>
-        <li> <strong>React Context API + useEffect</strong> — Efficient state and lifecycle management</li>
-      </ul>
-    </section>
+<ul style="line-height:1.8;">
+  <li><b>Install / Uninstall Apps</b> — Add or remove apps easily with one click.</li>
+  <li><b>Installed Apps List</b> — View all your installed apps instantly.</li>
+  <li><b>LocalStorage Persistence</b> — Your installed apps are saved locally.</li>
+  <li><b>Context API Integration</b> — Manage global state efficiently across components.</li>
+  <li><b>Real-Time Rendering</b> — Components auto-update with <code>useEffect()</code>.</li>
+  <li><b>Toast Notifications</b> — Smooth user feedback for every action.</li>
+  <li><b>Recharts Integration</b> — Display app data visually with charts.</li>
+</ul>
 
-    <!-- Installation Section -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-[#001931] mb-4"> Installation</h2>
-      <pre class="bg-gray-100 p-4 rounded text-gray-800 overflow-x-auto">
+<hr/>
+
+<h2 style="color:#001931;">Technologies Used</h2>
+
+<ul style="line-height:1.8;">
+  <li><b>React</b> — Frontend framework</li>
+  <li><b>React Router DOM</b> — For seamless navigation</li>
+  <li><b>Tailwind CSS</b> — Fast and responsive UI styling</li>
+  <li><b>React Toastify</b> — Beautiful toast notifications</li>
+  <li><b>Recharts</b> — Interactive data visualization</li>
+  <li><b>Lucide React</b> — Modern and minimal icon library</li>
+  <li><b>React Context API + useEffect</b> — Efficient state and lifecycle management</li>
+</ul>
+
+<hr/>
+
+<h2 style="color:#001931;">Installation</h2>
+
+<pre style="background:#f4f4f4; padding:15px; border-radius:10px; overflow:auto; color:#222;">
 <code># Clone the repository
-git clone https://github.com/yourusername/bubble-io.git
+git clone https://github.com/BiplobSordar/Bubble.iO
 
 # Go inside the folder
-cd bubble-io
+cd bubble-iO
 
 # Install dependencies
 npm install
@@ -62,23 +51,24 @@ npm install
 # Start the development server
 npm run dev
 </code>
-      </pre>
-    </section>
+</pre>
 
-    <!-- Live Demo Section -->
-    <section class="mb-12 text-center">
-      <h2 class="text-2xl font-semibold text-[#001931] mb-4">🌐 Live Demo</h2>
-      <a href="#" class="text-white bg-[#632EE3] px-6 py-3 rounded-md hover:bg-[#4a22b8] transition">
-        Visit Bubble.io App
-      </a>
-    </section>
+<hr/>
 
-    <!-- License Section -->
-    <section class="text-center text-gray-600">
-      <p>📜 <strong>License:</strong> MIT License</p>
-    </section>
+<h2 style="color:#001931;" align="center">Live Demo: <a>bubble-i-o.vercel.app</a></h2>
 
-  </div>
+<p align="center">
+  <a href="#" style="background:#632EE3; color:white; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block;">
+    Visit Bubble.io App
+  </a>
+</p>
 
-</body>
-</html>
+<hr/>
+
+<p align="center" style="color:#666;">
+  📜 <b>License:</b> MIT License
+</p>
+
+---
+
+<h4 align="center" style="color:#632EE3;">Made with ❤️ using React + Tailwind CSS</h4>
