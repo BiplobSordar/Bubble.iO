@@ -5,7 +5,7 @@
 <p align="center" style="font-size:1.1rem; color:#555;">
   A simple and interactive web application to install, uninstall, and manage apps seamlessly.
 </p>
-
+<a href='https://bubble-i-o.vercel.app/' target='_blank'>Live Link : Explore the Web Application</a>
 <hr/>
 
 <h2 style="color:#001931;">Features</h2>
